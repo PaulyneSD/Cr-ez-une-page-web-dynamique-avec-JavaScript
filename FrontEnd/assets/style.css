@@ -68,8 +68,10 @@ h1{
 	font-family: 'Syne';
 	font-size: 22px;
 	font-weight: 800;
-	color: #B1663C
+	color: #B1663C;
+	white-space: nowrap;
 }
+
 
 h1 > span {
 	font-family: 'Work Sans';
@@ -82,22 +84,35 @@ h2{
 	font-family: 'Syne';
 	font-weight: 700;
 	font-size: 30px;
-	color: #1D6154
+	color: #1D6154;
+	margin-top: 100px;
 }
 nav ul {
 	display: flex;
+	justify-content: center; 
 	align-items: center;
 	list-style-type: none;
 
+}
+
+ul {
+	padding-left: 700px;
+	gap: 41px;
 }
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
 }
 
-li:hover {
+li:hover, a:hover{
 	color: #B1663C;
 }
+
+
+a {
+	color: black;
+text-decoration: none;
+  }
 #introduction {
 	display: flex;
 	align-items: center;
@@ -186,3 +201,41 @@ footer nav ul {
 	margin: 2em
 }
 
+.categoriesContainer button {
+    font-family: 'Syne';
+	color: #1D6154;
+	background-color: white;
+	border-style: solid;
+    border-radius: 60px;
+    border-width :2px;
+	border-color:#1D6154;
+	height: 37px;
+	width: fit-content;
+
+}
+
+.categoriesContainer {
+	display:flex;
+    gap : 10px;
+	justify-content: center;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+#firstButton {
+	background-color: rgb(29, 97, 84);
+	color: white;
+	width: 100px;
+   }
+
+   div.category-button-div:nth-child(2) > button:nth-child(1) {
+	width: 100px;
+   }
+   
+   div.category-button-div:nth-child(3) > button:nth-child(1) {
+	width: 128px;
+   }
+   
+   div.category-button-div:nth-child(4) > button:nth-child(1) {
+	width: 198px;
+   }
+	
