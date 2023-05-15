@@ -12,6 +12,7 @@
     />
     <meta name="description" content="" />
     <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/modale.css" />
   </head>
   <body>
     <header>
@@ -50,6 +51,22 @@
         </article>
       </section>
       <section id="portfolio">
+            <!-- Bouton Modifier -->
+            <button id="editButton">Modifier</button>
+            
+            <!-- Fenêtre modale -->
+            <div id="modal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Ajouter un média</h3>
+                <form id="mediaForm">
+                  <input type="text" id="mediaTitle" placeholder="Titre du média" required>
+                  <input type="file" id="mediaFile" accept="image/*" required>
+                  <button type="submit">Ajouter</button>
+                </form>
+              </div>
+            </div>
+
         <h2>Mes Projets</h2>
 
         <div class="gallery">
@@ -151,8 +168,8 @@
         </ul>
       </nav>
     </footer>
+
 	<script src="script.js"></script>
 	<script src="categories.js"></script>
-	<script src="modale.html"></script>
   </body>
 </html>

@@ -48,3 +48,38 @@ function displayCategories(items) {
   portfolioSection.querySelector("h2").insertAdjacentElement("afterend", containerDiv);
 }
 
+// Récupération des éléments
+const editButton = document.getElementById('editButton');
+const modal = document.getElementById('modal');
+const closeButton = document.querySelector('.close');
+const mediaForm = document.getElementById('mediaForm');
+
+// Fonction d'ouverture de la fenêtre modale
+function openModal() {
+  modal.style.display = 'block';
+}
+
+// Fonction de fermeture de la fenêtre modale
+function closeModal() {
+  modal.style.display = 'none';
+}
+
+// Événement au clic sur le bouton Modifier
+editButton.addEventListener('click', openModal);
+
+// Événement au clic sur la croix de fermeture
+closeButton.addEventListener('click', closeModal);
+
+// Événement au clic en dehors de la fenêtre modale pour la fermer
+window.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
+
+// Événement de soumission du formulaire d'ajout de média
+mediaForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  // Effectuer le traitement d'ajout de média ici
+  closeModal();
+});

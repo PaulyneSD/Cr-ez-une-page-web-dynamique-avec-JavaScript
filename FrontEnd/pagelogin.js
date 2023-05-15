@@ -10,7 +10,7 @@ form.addEventListener("submit", (event) => {
   if (password === "S0phie") {
     alert("Connexion réussie !");
     window.location.href =
-      "http://127.0.0.1:5500/Portfolio-architecte-sophie-bluel/FrontEnd/index.html"; // Définit l'URL de la page d'accueil à charger
+      "http://127.0.0.1:5500/FrontEnd/"; // Définit l'URL de la page d'accueil à charger
   } else {
     alert("Mot de passe incorrect");
   }
