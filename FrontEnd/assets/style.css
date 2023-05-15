@@ -239,3 +239,9 @@ footer nav ul {
 	width: 198px;
    }
 	
+   #editButton {
+	border: none;
+	font: inherit;
+	background: none;
+   }
+    
