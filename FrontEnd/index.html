@@ -14,9 +14,13 @@
     <link rel="stylesheet" href="./assets/style.css" />
    
   </head>
-  <body>
+  <body>  
+    <div class="edit-mode-bar">
+      <div class="edit-mode-text">Mode édition</div>
+      <button class="publish-button">publier les changements</button>
+    </div>
     <header>
-      <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+      <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1> 
       <nav>
         <ul>
           <li><a href="#portfolio">projets</a></li>
@@ -51,25 +55,33 @@
         </article>
       </section>
       <section id="portfolio">
-            <!-- Bouton Modifier -->
-            <button id="editButton">modifier</button>
+
+        <button id="editButton">modifier</button>
+
+        <!-- Fenêtre modale -->
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
             
-            <!-- Fenêtre modale -->
-            <div id="modal" class="modal">
-              <div class="modal-content">
-                <span class="close">&times;</span>
-                <h3>Ajouter un média</h3>
-                <form id="mediaForm">
-                  <input type="text" id="mediaTitle" placeholder="Titre du média" required>
-                  <input type="file" id="mediaFile" accept="image/*" required>
-                  <button type="submit">Ajouter</button>
-                </form>
-              </div>
-            </div>
+            <h3>Galerie photo</h3>
+            <form id="mediaForm">
+              <input type="text" id="mediaTitle" placeholder="Titre du média" required>
+              <input type="file" id="mediaFile" accept="image/*" required>
+              <button type="submit">Ajouter</button>
+            </form>
+          </div>
+        </div>
+        
+        <div class="title-container">
+          <h2>Mes projets</h2>
+          <button id="modifyButton">modifier</button> 
+        </div>
+        
 
-        <h2>Mes Projets</h2>
-
-        <div class="gallery">
+  <!-- Galerie d'images -->
+  <div id="gallery" class="gallery"></div>
+        
+       
           <!-- <figure>
             <img src="assets/images/abajour-tahina.png" alt="Abajour Tahina" />
             <figcaption>Abajour Tahina</figcaption>

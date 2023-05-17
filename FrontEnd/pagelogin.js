@@ -16,6 +16,14 @@ form.addEventListener("submit", (event) => {
   }
 });
 
+const editModeBarContainer = document.getElementById('edit-mode-bar-container');
+
+if (password === 'S0phie') {
+  editModeBarContainer.style.display = 'block';
+} else {
+  editModeBarContainer.style.display = 'none';
+}
+
 forgotPasswordLink.addEventListener("click", () => {
   // Ajoutez ici le code pour envoyer un e-mail de réinitialisation de mot de passe
   alert("Un e-mail de réinitialisation de mot de passe a été envoyé.");
