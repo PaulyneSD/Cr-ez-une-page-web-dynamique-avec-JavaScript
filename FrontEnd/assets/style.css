@@ -265,9 +265,10 @@ footer nav ul {
 	margin: 10% auto;
 	padding: 20px;
 	border: 1px solid #888;
-	width: 59%;
-	max-width: 80%;
+	width: 40%;
+	max-width: 40%;
 	display: block;
+	border-radius: 10px;
   }
   
   .close {
