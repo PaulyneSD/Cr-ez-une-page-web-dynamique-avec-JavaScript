@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Sophie Bluel - Architecte d'intérieur</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/7bfb6eb2a0.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,9 +17,9 @@
   </head>
   <body>  
     <div class="edit-mode-bar">
-      <div class="edit-mode-text">Mode édition</div>
+      <div class="edit-mode-text"><i class="fas fa-pen-to-square"></i>Mode édition</div>
       <button class="publish-button">publier les changements</button>
-    </div>
+    </div>fas fa-pen-to-square
     <header>
       <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1> 
       <nav>
@@ -26,6 +27,8 @@
           <li><a href="#portfolio">projets</a></li>
           <li><a href="#contact">contact</a></li>
          <li><a href="login.html"> login</a></li> 
+         <!--<a id="logoutLink" href="index.html" style="display: none;">Log out</a> -->
+
           <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
         </ul>
       </nav>
@@ -36,6 +39,7 @@
           <img src="./assets/images/sophie-bluel.png" alt="" />
         </figure>
         <article>
+          <button id="editButton"><i class="fas fa-pen-to-square"></i>modifier</button>
           <h2>Designer d'espace</h2>
           <p>
             Je raconte votre histoire, je valorise vos idées. Je vous accompagne
@@ -56,7 +60,7 @@
       </section>
       <section id="portfolio">
 
-        <button id="editButton">modifier</button>
+        <button id="editButton"><i class="fas fa-pen-to-square"></i>modifier</button>
 
         <!-- Fenêtre modale -->
         <div id="modal" class="modal">
@@ -74,7 +78,7 @@
         
         <div class="title-container">
           <h2>Mes projets</h2>
-          <button id="modifyButton">modifier</button> 
+          <button id="modifyButton"><i class="fas fa-pen-to-square"></i>modifier</button> 
         </div>
         
 
