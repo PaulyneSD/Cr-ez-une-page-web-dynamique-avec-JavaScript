@@ -19,7 +19,7 @@
     <div class="edit-mode-bar">
       <div class="edit-mode-text"><i class="fas fa-pen-to-square"></i>Mode édition</div>
       <button class="publish-button">publier les changements</button>
-    </div>fas fa-pen-to-square
+    </div>
     <header>
       <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1> 
       <nav>
@@ -66,100 +66,36 @@
         <div id="modal" class="modal">
           <div class="modal-content">
             <span class="close">&times;</span>
+            <button id="addButton">Ajouter</button>
+
             
             <h3>Galerie photo</h3>
+            
+          </div>
+        </div>
+        <!-- Seconde Fenêtre modale -->
+        <div id="secondModal" class="modal">
+          <div class="modal-content">
+            <i id="backIcon" class="fas fa-arrow-left"></i>
+            <span class="close">&times;</span>
+            
             <form id="mediaForm">
               <input type="text" id="mediaTitle" placeholder="Titre du média" required>
               <input type="file" id="mediaFile" accept="image/*" required>
               <button type="submit">Ajouter</button>
             </form>
+            
           </div>
         </div>
         
         <div class="title-container">
           <h2>Mes projets</h2>
-          <button id="modifyButton"><i class="fas fa-pen-to-square"></i>modifier</button> 
+          <button id="modifyButton"><i class="fas fa-pen-to-square"></i>modifier</button>
         </div>
-        
 
-  <!-- Galerie d'images -->
-  <div id="gallery" class="gallery"></div>
-        
-       
-          <!-- <figure>
-            <img src="assets/images/abajour-tahina.png" alt="Abajour Tahina" />
-            <figcaption>Abajour Tahina</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="assets/images/appartement-paris-v.png"
-              alt="Appartement Paris V"
-            />
-            <figcaption>Appartement Paris V</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="assets/images/restaurant-sushisen-londres.png"
-              alt="Restaurant Sushisen - Londres"
-            />
-            <figcaption>Restaurant Sushisen - Londres</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="assets/images/la-balisiere.png"
-              alt="Villa “La Balisiere” - Port Louis"
-            />
-            <figcaption>Villa “La Balisiere” - Port Louis</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="assets/images/structures-thermopolis.png"
-              alt="Structures Thermopolis"
-            />
-            <figcaption>Structures Thermopolis</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="assets/images/appartement-paris-x.png"
-              alt="Appartement Paris X"
-            />
-            <figcaption>Appartement Paris X</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="assets/images/le-coteau-cassis.png"
-              alt="Pavillon “Le coteau” - Cassis"
-            />
-            <figcaption>Pavillon “Le coteau” - Cassis</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="assets/images/villa-ferneze.png"
-              alt="Villa Ferneze - Isola d’Elba"
-            />
-            <figcaption>Villa Ferneze - Isola d’Elba</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="assets/images/appartement-paris-xviii.png"
-              alt="Appartement Paris XVIII"
-            />
-            <figcaption>Appartement Paris XVIII</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="assets/images/bar-lullaby-paris.png"
-              alt="Bar “Lullaby” - Paris"
-            />
-            <figcaption>Bar “Lullaby” - Paris</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="assets/images/hotel-first-arte-new-delhi.png"
-              alt="Hotel First Arte - New Delhi"
-            />
-            <figcaption>Hotel First Arte - New Delhi</figcaption>
-          </figure> -->
+        <div id="gallery" class="gallery">
+          <!-- Galerie d'images -->
+          
         </div>
       </section>
       <section id="contact">
@@ -185,7 +121,7 @@
       </nav>
     </footer>
 
-	<script src="script.js"></script>
-	<script src="categories.js"></script>
+    <script src="script.js"></script>
+    <script src="categories.js"></script>
   </body>
 </html>

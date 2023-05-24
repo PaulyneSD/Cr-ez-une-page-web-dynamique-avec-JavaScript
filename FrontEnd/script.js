@@ -40,6 +40,28 @@ function displayItems(items) {
     modalImg.src = imageUrl;
     modalContent.appendChild(modalImg);
   });
+
+  // Ajout du bouton "Ajouter" dans la première modale
+  const addButtonModal = document.createElement("button");
+  addButtonModal.textContent = "Ajouter";
+  modalContent.appendChild(addButtonModal);
+
+  // Ajout du bouton "Supprimer" dans la première modale
+  const deleteButtonModal = document.createElement("button");
+  deleteButtonModal.textContent = "Supprimer";
+  modalContent.appendChild(deleteButtonModal);
+
+  // Événement au clic sur le bouton "Ajouter" pour passer à la deuxième modale
+  addButtonModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    secondModal.style.display = 'block';
+  });
+
+  // Événement au clic sur le bouton "Supprimer" pour supprimer une image de la galerie
+  deleteButtonModal.addEventListener('click', () => {
+    // Code pour supprimer l'image de la galerie
+    // Vous devrez implémenter la logique de suppression des images en fonction de vos besoins
+  });
 }
 
 // Récupération des éléments
@@ -60,6 +82,7 @@ function openModal() {
 // Fonction de fermeture de la fenêtre modale
 function closeModal() {
   modal.style.display = 'none';
+  secondModal.style.display = 'none'; // Ferme la deuxième modale également
   editButtonClicked = false;
 }
 
@@ -79,16 +102,9 @@ closeButton.addEventListener('click', closeModal);
 
 // Événement au clic en dehors de la fenêtre modale pour la fermer
 window.addEventListener('click', (event) => {
-  if (event.target === modal) {
+  if (event.target === modal || event.target === secondModal) {
     closeModal();
   }
-});
-
-// Événement de soumission du formulaire d'ajout de média
-mediaForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  // Effectuer le traitement d'ajout de média ici
-  closeModal();
 });
 
 // Fonction pour ouvrir la fenêtre modale avec une image en grand
@@ -107,3 +123,27 @@ function openImageModal(imageUrl) {
   openModal();
 }
 
+const addButton = document.getElementById('addButton');
+const secondModal = document.getElementById('secondModal');
+const backIcon = document.getElementById('backIcon');
+const secondModalCloseButton = document.querySelector('#secondModal .close');
+
+function openSecondModal() {
+  secondModal.style.display = 'block';
+}
+
+function goBackToFirstModal() {
+  secondModal.style.display = 'none';
+  modal.style.display = 'block';
+}
+
+addButton.addEventListener('click', openSecondModal);
+backIcon.addEventListener('click', goBackToFirstModal);
+secondModalCloseButton.addEventListener('click', goBackToFirstModal);
+
+// Fermer la modale lorsqu'on clique en dehors
+window.addEventListener('click', function(event) {
+  if (event.target === modal || event.target === secondModal) {
+    closeModal();
+  }
+});
