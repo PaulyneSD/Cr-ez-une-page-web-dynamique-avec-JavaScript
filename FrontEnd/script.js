@@ -10,7 +10,7 @@ fetch("http://localhost:5678/api/works")
 
 // Affichage des travaux dans la galerie et dans la fenêtre modale
 function displayItems(items) {
-  const gallery = document.getElementById('gallery');
+  const gallery = document.getElementById("gallery");
   const modalContent = document.querySelector(".modal-content");
 
   items.forEach((item) => {
@@ -35,73 +35,94 @@ function displayItems(items) {
 
     gallery.appendChild(figure);
 
-    // Également ajouter l'image à la fenêtre modale
+    // Également ajouter l'image à la fenêtre modale avec la case à cocher
+    const modalFigure = document.createElement("figure");
     const modalImg = document.createElement("img");
     modalImg.src = imageUrl;
-    modalContent.appendChild(modalImg);
+    modalFigure.appendChild(modalImg);
+
+    // Création de la case à cocher dans la fenêtre modale
+    const modalCheckbox = document.createElement("input");
+    modalCheckbox.type = "checkbox";
+    modalCheckbox.classList.add("modal-checkbox"); // Ajoutez une classe pour la sélectionner facilement
+    modalFigure.appendChild(modalCheckbox);
+
+    modalContent.appendChild(modalFigure);
   });
 
   // Ajout du bouton "Ajouter" dans la première modale
   const addButtonModal = document.createElement("button");
-  addButtonModal.textContent = "Ajouter";
+  addButtonModal.textContent = "Ajouter une photo";
+  addButtonModal.style.display = "block";
+  addButtonModal.style.margin = "0 auto"; // Centrer le bouton horizontalement
   modalContent.appendChild(addButtonModal);
 
   // Ajout du bouton "Supprimer" dans la première modale
   const deleteButtonModal = document.createElement("button");
-  deleteButtonModal.textContent = "Supprimer";
+  deleteButtonModal.textContent = "Supprimer la galerie";
+  deleteButtonModal.style.display = "block";
+  deleteButtonModal.style.margin = "0 auto"; // Centrer le bouton horizontalement
   modalContent.appendChild(deleteButtonModal);
 
   // Événement au clic sur le bouton "Ajouter" pour passer à la deuxième modale
-  addButtonModal.addEventListener('click', () => {
-    modal.style.display = 'none';
-    secondModal.style.display = 'block';
+  addButtonModal.addEventListener("click", () => {
+    modal.style.display = "none";
+    secondModal.style.display = "block";
   });
 
   // Événement au clic sur le bouton "Supprimer" pour supprimer une image de la galerie
-  deleteButtonModal.addEventListener('click', () => {
-    // Code pour supprimer l'image de la galerie
-    // Vous devrez implémenter la logique de suppression des images en fonction de vos besoins
+  deleteButtonModal.addEventListener("click", () => {
+    const checkboxes = document.querySelectorAll(".modal-checkbox");
+    checkboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        const figure = checkbox.parentNode;
+        const modalContent = figure.parentNode;
+        modalContent.removeChild(figure);
+      }
+    });
   });
 }
 
 // Récupération des éléments
-const editButton = document.getElementById('editButton');
-const modal = document.getElementById('modal');
-const closeButton = document.querySelector('.close');
-const mediaForm = document.getElementById('mediaForm');
+const editButton = document.getElementById("editButton");
+const modal = document.getElementById("modal");
+const closeButton = document.querySelector(".close");
+const mediaForm = document.getElementById("mediaForm");
 let editButtonClicked = false;
 
 // Récupération du nouvel élément "Modifier"
-const modifyButton = document.getElementById('modifyButton');
+const modifyButton = document.getElementById("modifyButton");
 
 // Fonction d'ouverture de la fenêtre modale
 function openModal() {
-  modal.style.display = 'block';
+  modal.style.display = "block";
+  modal.classList.add("fixed-modal"); // Ajout de la classe pour rendre la modale fixe
 }
 
 // Fonction de fermeture de la fenêtre modale
 function closeModal() {
-  modal.style.display = 'none';
-  secondModal.style.display = 'none'; // Ferme la deuxième modale également
+  modal.style.display = "none";
+  secondModal.style.display = "none"; // Ferme la deuxième modale également
   editButtonClicked = false;
+  modal.classList.remove("fixed-modal"); // Suppression de la classe pour désactiver la modal fixe
 }
 
 // Événement au clic sur le bouton Modifier
-editButton.addEventListener('click', () => {
+editButton.addEventListener("click", () => {
   editButtonClicked = true;
   openModal();
 });
 
 // Événement au clic sur le bouton Modifier (nouvel élément)
-modifyButton.addEventListener('click', () => {
+modifyButton.addEventListener("click", () => {
   // Code à exécuter lorsque le bouton "Modifier" (nouvel élément) est cliqué
 });
 
 // Événement au clic sur la croix de fermeture
-closeButton.addEventListener('click', closeModal);
+closeButton.addEventListener("click", closeModal);
 
 // Événement au clic en dehors de la fenêtre modale pour la fermer
-window.addEventListener('click', (event) => {
+window.addEventListener("click", (event) => {
   if (event.target === modal || event.target === secondModal) {
     closeModal();
   }
@@ -123,27 +144,30 @@ function openImageModal(imageUrl) {
   openModal();
 }
 
-const addButton = document.getElementById('addButton');
-const secondModal = document.getElementById('secondModal');
-const backIcon = document.getElementById('backIcon');
-const secondModalCloseButton = document.querySelector('#secondModal .close');
+const addButton = document.getElementById("addButton");
+const secondModal = document.getElementById("secondModal");
+const backIcon = document.getElementById("backIcon");
+const secondModalCloseButton = document.querySelector("#secondModal .close");
 
 function openSecondModal() {
-  secondModal.style.display = 'block';
+  secondModal.style.display = "block";
 }
 
 function goBackToFirstModal() {
-  secondModal.style.display = 'none';
-  modal.style.display = 'block';
+  secondModal.style.display = "none";
+  modal.style.display = "block";
 }
 
-addButton.addEventListener('click', openSecondModal);
-backIcon.addEventListener('click', goBackToFirstModal);
-secondModalCloseButton.addEventListener('click', goBackToFirstModal);
+addButton.addEventListener("click", openSecondModal);
+backIcon.addEventListener("click", goBackToFirstModal);
+secondModalCloseButton.addEventListener("click", goBackToFirstModal);
 
 // Fermer la modale lorsqu'on clique en dehors
-window.addEventListener('click', function(event) {
+window.addEventListener("click", function (event) {
   if (event.target === modal || event.target === secondModal) {
     closeModal();
   }
 });
+
+modalContent.appendChild(modalFigure);
+modalFigure.classList.add("modal-gallery"); // Ajoutez la classe "modal-gallery"

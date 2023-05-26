@@ -66,25 +66,44 @@
         <div id="modal" class="modal">
           <div class="modal-content">
             <span class="close">&times;</span>
-            <button id="addButton">Ajouter</button>
+            <button id="addButton">Ajouter une photo</button>
 
             
             <h3>Galerie photo</h3>
+            
             
           </div>
         </div>
         <!-- Seconde Fenêtre modale -->
         <div id="secondModal" class="modal">
-          <div class="modal-content">
+          <div class="dmodal-content">
             <i id="backIcon" class="fas fa-arrow-left"></i>
             <span class="close">&times;</span>
-            
-            <form id="mediaForm">
+            <h3>Ajout photo</h3>
+            <div style="display: flex; justify-content: center;">
+             
+              <form id="mediaForm">
+                <div class="background">
+                  <label for="mediaFile" class="button" style="display: grid; align-content: center;	; width: 173px; height: 36px; margin: 0 auto;">
+                    + Ajouter une photo
+                </label>
+              <p class="format">jpg, png : 4mo max</p>
+            </div>
+              <input type="file" id="mediaFile" accept="image/*" required style="display: none;">
+              <p>Titre</p>
               <input type="text" id="mediaTitle" placeholder="Titre du média" required>
-              <input type="file" id="mediaFile" accept="image/*" required>
-              <button type="submit">Ajouter</button>
+              
+              <label for="categories">Catégories</label>
+              <input list="Catégories" type="text" id="filtres">
+              <datalist id="Catégories">
+                <option value="Objets">
+                <option value="Appartements">
+                <option value="Hôtels&restaurants">
+              </datalist>
+
+              <button type="submit">Valider</button>
             </form>
-            
+          </div>
           </div>
         </div>
         
