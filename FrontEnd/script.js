@@ -83,6 +83,7 @@ function displayItems(items) {
   });
 }
 
+
 // Récupération des éléments
 const editButton = document.getElementById("editButton");
 const modal = document.getElementById("modal");
@@ -106,12 +107,6 @@ function closeModal() {
   editButtonClicked = false;
   modal.classList.remove("fixed-modal"); // Suppression de la classe pour désactiver la modal fixe
 }
-
-// Événement au clic sur le bouton Modifier
-editButton.addEventListener("click", () => {
-  editButtonClicked = true;
-  openModal();
-});
 
 // Événement au clic sur le bouton Modifier (nouvel élément)
 modifyButton.addEventListener("click", () => {
@@ -141,8 +136,16 @@ function openImageModal(imageUrl) {
   const img = document.createElement("img");
   img.src = imageUrl;
   modalContent.appendChild(img);
+
+  // Ajouter le texte "Éditer" uniquement pour la galerie de la modale
+  const editCaption = document.createElement("p");
+  editCaption.textContent = "Éditer";
+  modalContent.appendChild(editCaption);
+
   openModal();
 }
+
+// Deuxième modale
 
 const addButton = document.getElementById("addButton");
 const secondModal = document.getElementById("secondModal");
@@ -169,5 +172,40 @@ window.addEventListener("click", function (event) {
   }
 });
 
-modalContent.appendChild(modalFigure);
-modalFigure.classList.add("modal-gallery"); // Ajoutez la classe "modal-gallery"
+// Fonction de déconnexion
+function deconnexion() {
+  // Afficher le message de déconnexion
+  console.log("Vous êtes déconnecté.");
+
+  // Rediriger vers la page d'accueil
+  window.location.href = "index.html";
+}
+
+// Fonction de connexion
+function connexion() {
+  // Afficher le message de connexion
+  console.log("Vous êtes connecté.");
+
+  // Rediriger vers la page login
+  window.location.href = "login.html";
+}
+
+function login() {
+  // Code pour la connexion de l'utilisateur
+
+  // Cacher le bouton "Login"
+  document.getElementById("loginLi").style.display = "none";
+
+  // Afficher le bouton "Logout"
+  document.getElementById("logoutLi").style.display = "inline-block";
+}
+
+function logout() {
+  // Code pour la déconnexion de l'utilisateur
+
+  // Cacher le bouton "Logout"
+  document.getElementById("logoutLi").style.display = "none";
+
+  // Afficher le bouton "Login"
+  document.getElementById("loginLi").style.display = "inline-block";
+}

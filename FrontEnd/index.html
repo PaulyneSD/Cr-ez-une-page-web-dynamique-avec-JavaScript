@@ -26,9 +26,13 @@
         <ul>
           <li><a href="#portfolio">projets</a></li>
           <li><a href="#contact">contact</a></li>
-         <li><a href="login.html"> login</a></li> 
-         <!--<a id="logoutLink" href="index.html" style="display: none;">Log out</a> -->
-
+          <li id="loginLi">
+            <button onclick="login()">login</button>
+          </li>
+         <li id="logoutLi">
+          <button onclick="logout()">logout</button>
+        </li>
+        
           <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
         </ul>
       </nav>
@@ -39,7 +43,7 @@
           <img src="./assets/images/sophie-bluel.png" alt="" />
         </figure>
         <article>
-          <button id="editButton"><i class="fas fa-pen-to-square"></i>modifier</button>
+          <button id="editButton1"><i class="fas fa-pen-to-square"></i>modifier</button>
           <h2>Designer d'espace</h2>
           <p>
             Je raconte votre histoire, je valorise vos idées. Je vous accompagne
@@ -58,19 +62,18 @@
           </p>
         </article>
       </section>
+      <button id="editButton"><i class="fas fa-pen-to-square"></i>modifier</button>
       <section id="portfolio">
 
-        <button id="editButton"><i class="fas fa-pen-to-square"></i>modifier</button>
+       
 
         <!-- Fenêtre modale -->
         <div id="modal" class="modal">
           <div class="modal-content">
             <span class="close">&times;</span>
+            <h3>Galerie photo</h3>
             <button id="addButton">Ajouter une photo</button>
 
-            
-            <h3>Galerie photo</h3>
-            
             
           </div>
         </div>
@@ -113,9 +116,10 @@
         </div>
 
         <div id="gallery" class="gallery">
-          <!-- Galerie d'images -->
           
+          <!-- Galerie d'images -->
         </div>
+      
       </section>
       <section id="contact">
         <h2>Contact</h2>

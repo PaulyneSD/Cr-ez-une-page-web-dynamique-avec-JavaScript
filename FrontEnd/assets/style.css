@@ -24,7 +24,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
+article, aside, details, figcaption,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -95,7 +95,7 @@ nav ul {
 }
 
 ul {
-	padding-left: 600px;
+	padding-left: 500px;
 	gap: 41px;
 }
 nav li {
@@ -269,8 +269,9 @@ footer nav ul {
 	padding: 20px;
 	border: 1px solid #888;
 	width: 630px;
-	height: 731px;
-	display: block;
+	height: 520px;
+	display: flex;
+	flex-wrap: wrap;
 	border-radius: 10px;
 	padding-left: 85px;
 	
@@ -283,7 +284,7 @@ footer nav ul {
 	padding: 20px;
 	border: 1px solid #888;
 	width: 630px;
-	height: 731px;
+	height: 532px;
 	display: block;
 	border-radius: 10px;
 	padding-left: 85px;
@@ -309,7 +310,19 @@ footer nav ul {
 	height: 108.36px;
 	width: 77.37px;
 	padding: 7px;
+	position: relative;
   }
+
+  .modal-img::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 1;
+	background-color: red;
+  }
+  
 
   h3 {
 	text-align: center;
@@ -353,6 +366,13 @@ footer nav ul {
 	width: 216px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+   }
+   
+   #editButton1 {
+	border: none;
+	font: inherit;
+	background: none;
+	padding-top: 80px;
    }
    
 
@@ -427,6 +447,8 @@ footer nav ul {
   #addButton {
 	display: none;
    }
+
+
    
    /* Bouton Ajouter a la galerie*/
 
@@ -441,6 +463,7 @@ footer nav ul {
 	height: 36px;
 	width: 237px;
    }
+   
    
    /* Bouton Supprimer de la galerie*/
 
@@ -463,19 +486,23 @@ footer nav ul {
 	border-radius: 60px;
 	border-width: 2px;
 	border-color: #A7A7A7;
-	height: 36px;
-	width: 173px;
 	display: grid;
 	align-content: center;
-	margin-top: 177px;
+	align-items: center;
+	margin-top: 17px;
+	width: 237px;
+	height: 36px;
    }
    
    
-   
+   /*Texte en dessous du bouton ajouter une photo */
    .format {
 	padding-top: 7px;
     padding-bottom: 75px;
-    padding-left: 22px;
+    display: grid;
+	justify-content: center;
+	   
+	   
    }
    
    /* Bouton Ajouter une photo */
@@ -488,10 +515,10 @@ footer nav ul {
 	border-width: 2px;
 	border-color: #CBD6DC;
 	font-size: 14px;
-	width: 36px;
-	height: 173px;
-	align-content: center;	
+	text-align:  center;	
+    
    }
+   
      
 #mediaTitle {
 	border-color: white;
@@ -525,6 +552,26 @@ footer nav ul {
 
 .background {
 	background-color: #E8F1F6;
-	background-size: 420px 169px;
+    height: 179px;
+	width: 420px;
 }
+   
+#logoutLi > button:nth-child(1) {
+	border: none;
+	background-color:white;
+	font-family: 'Work Sans';
+	color: black;
+	font-size: 16px;
+   }
+   
+   #loginLi > button:nth-child(1) {
+	border: none;
+	background-color: white;
+	font-family: 'Work Sans';
+	color: black;
+	font-size: 16px;
+   }
+   
+
+   
    
